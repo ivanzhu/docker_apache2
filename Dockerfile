@@ -10,6 +10,6 @@ RUN ./configure --prefix=/usr/local/apache2 --with-inclued-apr --with-mpm=event 
 #RUN ./configure --prefix=/usr/local/apache2 --with-inclued-apr --with-mpm=event  --enable-ssl --with-pcre --enable-mods-static=most
 RUN make && make install
 EXPOSE 80
-CMD /usr/local/apache2/bin/apachectl start
-#ENTRYPOINT ["/usr/local/apache2/bin/apachectl", "start"]
-#ENTRYPOINT /usr/local/apache2/bin/apachectl start
+#CMD /usr/local/apache2/bin/apachectl
+ENTRYPOINT ["/usr/local/apache2/bin/apachectl"]
+#ENTRYPOINT /usr/local/apache2/bin/apachectl
